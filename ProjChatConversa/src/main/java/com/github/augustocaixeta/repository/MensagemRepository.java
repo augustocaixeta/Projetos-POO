@@ -25,10 +25,10 @@ public class MensagemRepository {
     }
     
     public void salvar(Mensagem mensagem) {
-        String sql = "INSERT INTO mensagens (conversa_id, autor_id, conteudo, data_envio) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO mensagens (autor_id, conversa_id, conteudo, data_envio) VALUES (?, ?, ?, ?)";
         try (PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            ps.setInt(1, mensagem.getConversa().getId());
-            ps.setInt(2, mensagem.getAutor().getId());
+            ps.setInt(1, mensagem.getAutor().getId());
+            ps.setInt(2, mensagem.getConversa().getId());
             ps.setString(3, mensagem.getConteudo());
             ps.setTimestamp(4, Timestamp.valueOf(mensagem.getDataEnvio()));
             ps.executeUpdate();
@@ -71,9 +71,7 @@ public class MensagemRepository {
                 );
                 
                 mensagens.add(new Mensagem(
-                    rs.getInt("id"),
-                    autor,
-                    conversa,
+                    rs.getInt("id"), autor, conversa,
                     rs.getString("conteudo"),
                     rs.getTimestamp("data_envio").toLocalDateTime()
                 ));
