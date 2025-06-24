@@ -4,6 +4,7 @@ import com.github.augustocaixeta.conexao.Conexao;
 import com.github.augustocaixeta.model.Entrada;
 import com.github.augustocaixeta.model.EntradaProduto;
 import com.github.augustocaixeta.model.Fornecedor;
+import com.github.augustocaixeta.model.Produto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -58,6 +59,19 @@ public class EntradaDAO {
         return entrada;
     }
     
+    public EntradaProduto salvarEntradaProduto(EntradaProduto entradaProduto) {
+        String sql = "INSERT INTO entrada_produtos(id_entrada, id_produto, quantidade) VALUES (?, ?, ?);";
+        try (PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            ps.setInt(1, entradaProduto.getEntrada().getId());
+            ps.setInt(2, entradaProduto.getProduto().getId());
+            ps.setInt(3, entradaProduto.getQuantidade());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return entradaProduto;
+    }
+    
     public List<Entrada> obterEntradas() {
         List<Entrada> entradas = new ArrayList<>();
         List<EntradaProduto> entradaProdutos = new ArrayList<>();
@@ -84,7 +98,21 @@ public class EntradaDAO {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-        
         return entradas;
+    }
+    
+    public EntradaProduto getItem(ResultSet rs, Entrada entrada) throws SQLException {
+        EntradaProduto entradaProduto = new EntradaProduto();
+        Produto produto = new Produto();
+        
+        produto.setId(rs.getInt("id_produto"));
+        produto.setNome(rs.getString("nome"));
+        produto.setValor(rs.getDouble("valor"));
+        
+        entradaProduto.setQuantidade(rs.getInt("quantidade"));
+        entradaProduto.setProduto(produto);
+        entradaProduto.setEntrada(entrada);
+        
+        return entradaProduto;
     }
 }

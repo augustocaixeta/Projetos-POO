@@ -22,7 +22,7 @@ public class EntradaService {
         double total = 0.0;
         for (EntradaProduto ep : entrada.getItensEntrada()) {
             Produto produto = ep.getProduto();
-            // produtoDao.getProduto(produto);
+            produtoDao.obterProduto(produto);
             total += produto.getValor() + ep.getQuantidade();
         }
         entrada.setTotalEntrada(total);

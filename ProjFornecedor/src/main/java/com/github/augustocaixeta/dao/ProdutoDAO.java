@@ -19,6 +19,15 @@ public class ProdutoDAO {
         cn = new Conexao().obterConexao();
     }
     
+    private Produto obterProduto(ResultSet rs) throws SQLException {
+        Produto produto = new Produto(
+                rs.getInt("id"),
+                rs.getString("nome"),
+                rs.getDouble("valor")
+        );
+        return produto;
+    }
+    
     public Produto salvar(Produto produto) {
         String sql = "INSERT INTO produtos(nome, valor) VALUES (?, ?);";
         try (PreparedStatement ps = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -53,12 +62,18 @@ public class ProdutoDAO {
         return produtos;
     }
     
-    private Produto obterProduto(ResultSet rs) throws SQLException {
-        Produto produto = new Produto(
-                rs.getInt("id"),
-                rs.getString("nome"),
-                rs.getDouble("valor")
-        );
+    public Produto obterProduto(Produto produto) {
+        String sql = "SELECT * FROM produtos WHERE id_produto = ?;";
+        ResultSet rs;
+        try (PreparedStatement ps = cn.prepareStatement(sql)) {
+            ps.setInt(1, produto.getId());
+            rs = ps.executeQuery();
+            rs.next();
+            produto.setNome(rs.getString("nome"));
+            produto.setValor(rs.getDouble("valor"));
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
         return produto;
     }
 }
