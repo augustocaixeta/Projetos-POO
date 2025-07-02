@@ -1,0 +1,17 @@
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\bd\Conexao.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\console\MenuPrincipal.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\dao\ConversaDAO.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\dao\ConversaParticipanteDAO.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\dao\GrupoDAO.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\dao\MensagemDAO.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\dao\UsuarioDAO.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\model\Contato.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\model\Conversa.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\model\Grupo.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\model\Mensagem.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\model\Usuario.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\principal\Principal.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\service\ConversaService.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\service\GrupoService.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\service\MensagemService.java
+C:\Users\Augusto\Documents\NetBeansProjects\ProjChatConversa\src\main\java\com\github\augustocaixeta\service\UsuarioService.java

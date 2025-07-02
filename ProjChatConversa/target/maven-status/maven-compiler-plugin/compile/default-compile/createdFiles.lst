@@ -1,0 +1,17 @@
+com\github\augustocaixeta\service\MensagemService.class
+com\github\augustocaixeta\principal\Principal.class
+com\github\augustocaixeta\dao\MensagemDAO.class
+com\github\augustocaixeta\dao\UsuarioDAO.class
+com\github\augustocaixeta\console\MenuPrincipal.class
+com\github\augustocaixeta\dao\ConversaParticipanteDAO.class
+com\github\augustocaixeta\model\Conversa.class
+com\github\augustocaixeta\bd\Conexao.class
+com\github\augustocaixeta\dao\ConversaDAO.class
+com\github\augustocaixeta\model\Contato.class
+com\github\augustocaixeta\model\Mensagem.class
+com\github\augustocaixeta\service\UsuarioService.class
+com\github\augustocaixeta\dao\GrupoDAO.class
+com\github\augustocaixeta\model\Usuario.class
+com\github\augustocaixeta\model\Grupo.class
+com\github\augustocaixeta\service\ConversaService.class
+com\github\augustocaixeta\service\GrupoService.class
